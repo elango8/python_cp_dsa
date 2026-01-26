@@ -18,4 +18,4 @@ class Solution:
                 high -= 1
                 
 inp = Solution()
-print(inp([0,1,2,0,2,1]))
+print(inp.sortColors([0,1,2,0,2,1]))
