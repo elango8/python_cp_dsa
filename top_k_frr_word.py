@@ -7,15 +7,15 @@ class Solution():
             dic[num] +=1
         res = []
         for ke,fre in dic.items():
-            heapq.heappush(res,(-fre,ke))
+            heapq.heappush(res,(fre,ke))
             if len(res) > k:
                 heapq.heappop(res)
             
+        res.sort(key=lambda x:(-x[0],x[1]))
         result =[]
-        while res:
-            result.append(heapq.heappop(res)[1])
+        for fre,wor in res:
+            result.append(wor)
         return result
         
-        
 my = Solution()
-print(my.fre_word(["the","day","is","sunny","the","the","the","sunny","is","is"],4))
+print(my.fre_word(["i","love","leetcode","i","love","coding"],1))
